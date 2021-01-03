@@ -1,2 +1,2 @@
 # WEB11
-restaurant web project
+Restaurant Web Project
