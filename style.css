@@ -13,6 +13,10 @@ a {
   color: var(--text-color);
 }
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +74,7 @@ a {
   color: var(--text-color);
   font-size: 20px;
   font-weight: bold;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-left: 50px;
 }
 .map {
