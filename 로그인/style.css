@@ -23,7 +23,6 @@ a {
   background-color: var(--background-color);
   padding: 16px 12px;
 }
-
 .navbar__logo {
   margin-left: 10px;
   font-size: 24px;
@@ -32,7 +31,6 @@ a {
 .navbar__logo {
   color: var(--text-color);
 }
-
 .navbar__menu {
   font-size: 20px;
   display: flex;
@@ -46,7 +44,6 @@ a {
   background-color: var(--accent-color);
   border-radius: 4px;
 }
-
 .navbar__login {
   padding: 8px 12px;
   padding-left: 0;
@@ -62,13 +59,61 @@ a {
 .btn2 {
   background-color: aliceblue;
 }
-
 .navbar__toggleBtn {
   position: absolute;
   right: 32px;
   font-size: 24px;
   display: none;
 }
+/**/
+.name {
+  padding-top: 180px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 345px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.login-input-section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-input-wrap input {
+  width: 400px;
+  height: 40px;
+  font-size: 14px;
+}
+.pw-wrap {
+  margin-top: 10px;
+}
+.login-button {
+  padding-top: 14px;
+}
+.login-button button {
+  width: 408px;
+  height: 40px;
+  font-size: 18px;
+  background: var(--background-color);
+  border: solid 1px var(--text-color);
+  cursor: pointer;
+}
+.login-option {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.login-option div {
+  text-align: center;
+  padding: 5px;
+}
+/**/
 
 .bottombar {
   margin-top: 40px;
@@ -90,7 +135,10 @@ a {
   font-size: 20px;
   padding: 8px 12px;
 }
-@media screen and (max-width: 768px) {
+
+/*창의 가로 너비가 770px보다 작아지는 순간부터
+navbar디자인 변경*/
+@media screen and (max-width: 770px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
