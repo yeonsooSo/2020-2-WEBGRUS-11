@@ -77,42 +77,42 @@ a {
   color: var(--text-color);
 }
 
-.login-input-section {
+.register-input-section {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.login-input-wrap input {
+.register-input-wrap {
+  display: flex;
+  font-weight: bold;
+  margin-top: 14px;
+}
+.register-input-wrap input {
   width: 400px;
   height: 40px;
   font-size: 14px;
 }
-.pw-wrap {
-  margin-top: 10px;
-}
-.login-button {
+
+.btns {
   padding-top: 14px;
+  display: flex;
+  padding: 5px;
 }
-.login-button button {
-  width: 408px;
+.btns button {
+  width: 120px;
   height: 40px;
   font-size: 18px;
-  background: var(--background-color);
   border: solid 1px var(--text-color);
   cursor: pointer;
 }
-.login-option {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 100px;
+.cancel {
+  background-color: none;
 }
-.login-option div {
-  text-align: center;
-  padding: 5px;
+.register {
+  background-color: var(--background-color);
 }
+
 /**/
 
 .bottombar {
