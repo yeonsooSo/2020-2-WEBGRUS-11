@@ -8,15 +8,16 @@ exports.login_page = function(request, response)
 {
   /*
      세션을 이용해 로그인 되어있는지 확인
-     되어있으면 경고창 띄우고 홈으로 보냄
+     안되어있으면 경고창 띄우고 로그인 페이지로 보냄
   */
   if(request.session !== undefined)
   {
     if(request.session.islogined)
     {
-      response.end(`<script>
+      response.end(`
+      <script>
         alert("you already logged in!!");
-        window.location.href='/'
+        window.location.href='/login'
       </script>`);
       return;
     }
@@ -47,7 +48,7 @@ exports.login_page = function(request, response)
 exports.login_process = function(request, response){
   /*
      세션을 이용해 로그인 되어있는지 확인
-     되어있으면 경고창 띄우고 홈으로 보냄
+     안되어있으면 경고창 띄우고 로그인 페이지로 보냄
   */
   if(request.session !== undefined)
   {
@@ -55,7 +56,7 @@ exports.login_process = function(request, response){
     {
       response.end(`<script>
         alert("you already logged in!!");
-        window.location.href='/';
+        window.location.href='/login';
       </script>`);
       return;
     }
@@ -95,13 +96,13 @@ exports.login_process = function(request, response){
 exports.logout_process = function(request, response){
   /*
      세션을 이용해 로그인 되어있는지 확인
-     안되어있으면 경고창 띄우고 홈으로 보냄
+     안되어있으면 경고창 띄우고 로그인 페이지로 보냄
   */
   if(request.session === undefined || request.session.isLogined === false)
   {
     response.end(`<script>
       alert("you are not logged!!");
-      window.location.href='/';
+      window.location.href='/login';
     </script>`);
     return;
   }
@@ -120,13 +121,13 @@ exports.logout_process = function(request, response){
 exports.sign_up_process = function(request, response){
   /*
      세션을 이용해 로그인 되어있는지 확인
-     되어있으면 경고창 띄우고 홈으로 보냄
+     안되어있으면 경고창 띄우고 로그인 페이지로 보냄
   */
   if((request.session !== undefined && request.session.isLogined === true))
   {
     response.end(`<script>
       alert("Something wrong...");
-      window.location.href='/';
+      window.location.href='/login';
     </script>`);
     return;
   }
@@ -171,7 +172,7 @@ exports.sign_up_process = function(request, response){
 exports.sign_up = function(request, response){
   /*
      세션을 이용해 로그인 되어있는지 확인
-     되어있으면 경고창 띄우고 홈으로 보냄
+     안되어있으면 경고창 띄우고 로그인 페이지로 보냄
   */
   if(request.session !== undefined)
   {
@@ -179,7 +180,7 @@ exports.sign_up = function(request, response){
     {
       response.end(`<script>
         alert("you already logged in!!");
-        window.location.href='/'
+        window.location.href='/login'
       </script>`);
       return;
     }
