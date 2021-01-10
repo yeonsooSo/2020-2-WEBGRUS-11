@@ -94,12 +94,12 @@ a {
   font-size: 14px;
 }
 
-.btns {
-  padding-top: 14px;
+.btn-wrap {
+  padding-top: 20px;
   display: flex;
   padding: 5px;
 }
-.btns button {
+.btn-wrap button {
   width: 120px;
   height: 40px;
   font-size: 18px;
