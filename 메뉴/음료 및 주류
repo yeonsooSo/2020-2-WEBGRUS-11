@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<style>
+		body {
+			margin: 0px;
+		}
+
+		a:link {
+			color: rgb(150, 150, 150);
+			text-decoration: none;
+		}
+
+		a:visited {
+			color: rgb(150, 150, 150);
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: rgb(150, 150, 150);
+			text-decoration: none;
+		}
+
+		.nav {
+			height: 100px;
+			border-bottom: 3px solid gray;
+			display: flex;
+			align-items: center;
+			background-color: rgb(233, 233, 233);
+		}
+
+		.logo {
+			width: 130px;
+			height: 70px;
+			border: 1px solid black;
+			margin-bottom: 15px;
+			margin-left: 120px;
+		}
+
+		.logo-items {
+			text-align: center;
+		}
+
+		.nav-items {
+			display: flex;
+			font-size: 17px;
+			font-weight: bold;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.nav-items a {
+			margin-left: 50px;
+			color: black;
+		}
+
+		.nav-item1 {
+			color: rgb(110, 110, 110);
+		}
+
+		.nav-item2 {
+			color: rgb(110, 110, 110);
+		}
+
+		.nav-item3 {
+			color: rgb(110, 110, 110);
+		}
+
+		.nav-item4 {
+			color: rgb(110, 110, 110);
+		}
+
+		.nav-item5 {
+			color: rgb(110, 110, 110);
+		}
+
+
+		.member-items {
+			display: flex;
+			margin-left: 170px;
+		}
+
+		.member-item {
+			width: 60px;
+			height: 35px;
+			margin-left: 20px;
+			border: solid 1px black;
+			font-size: 13px;
+
+		}
+
+		.nav1 {
+			height: 110px;
+			border-bottom: 2px solid gray;
+			display: flex;
+			align-items: center;
+		}
+
+		.nav1-items {
+			display: flex;
+			font-size: 23px;
+			margin-left: 280px;
+			margin-right: auto;
+			font-weight: bold;
+		}
+
+		.nav1-items a {
+			margin-left: 35px;
+		}
+
+		.nav1-item1 {
+			color: RGB(180, 180, 180);
+		}
+
+		.nav1-item2 {
+			color: RGB(180, 180, 180);
+		}
+
+		.nav1-item3 {
+			color: black;
+		}
+
+		.main {
+			width: 800px;
+			margin: 0 auto;
+			margin-top: 60px;
+		}
+
+		.title {
+			text-align: center;
+			font-size: 30px;
+			font-weight: 400;
+		}
+
+		.subtitle {
+			text-align: center;
+			font-size: 20px;
+			font-weight: 300;
+		}
+
+		.menues {
+			display: flex;
+			margin-top: 30px;
+		}
+
+		.menu-item {
+			width: 350px;
+			height: 260px;
+			margin: 20px;
+			background-color: rgb(233, 233, 233)
+		}
+
+		img {
+			display: block;
+			margin-top: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		.menu-item-name {
+			text-align: center;
+			font-size: 15px;
+			margin-top: 12px;
+			font-weight: bold;
+			color: rgb(109, 109, 109);
+		}
+
+		.menu-item-price {
+			text-align: center;
+			font-size: 15px;
+			margin-bottom: 15px;
+			color: rgb(109, 109, 109);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav">
+		<div class="logo">
+			<div class="logo-items"><a href="#">
+					Logo
+				</a></div>
+		</div>
+		<div class="nav-items">
+			<a href="#">
+				<div class="nav-item1">INTRODUCE</div>
+			</a>
+			<a href="#">
+				<div class="nav-item2">MENU</div>
+			</a>
+			<a href="#">
+				<div class="nav-item3">RESERVATION</div>
+			</a>
+			<a href="#">
+				<div class="nav-item4">NOTIFY</div>
+			</a>
+			<a href="#">
+				<div class="nav-item5">MY PAGE</div>
+			</a>
+			<div class="member-items">
+				<button class="member-item">Log In</button>
+          <button class="member-item">Sign up</button>     
+        </div>
+      </div>
+    </div>
+    <div class="nav1">
+      <div class="nav1-items">
+        <a href="#"><div class="nav1-item1">추천메뉴</div></a>
+        <a href="#"><div class="nav1-item2">전체메뉴</div></a>
+        <a href="#"><div class="nav1-item3">음료/주류</div></a>
+      </div>
+
+    </div>
+    <div class="main">
+      <div class="title">
+        음료/주류
+      </div>
+      <div class="subtitle">
+        미성년자에게는 주류를 판매하지 않습니다.
+      </div>
+      <div class="menues">
+        <div class="menu-item">
+          <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            콜라
+          </div>
+          <div class="menu-item-price">
+            1900\
+          </div>                 
+        </div>
+        <div class="menu-item">
+           <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div>
+        </div>    
+        <div class="menu-item">
+          <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div> 
+        </div>    
+      </div>
+      <div class="menues">
+        <div class="menu-item">
+          <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div>                 
+        </div>
+        <div class="menu-item">
+           <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div>
+        </div>    
+        <div class="menu-item">
+          <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div> 
+        </div>    
+      </div>
+            <div class="menues">
+        <div class="menu-item">
+          <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div>                 
+        </div>
+        <div class="menu-item">
+           <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div>
+        </div>    
+        <div class="menu-item">
+          <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+          <div class="menu-item-name">
+            뚝배기 불고기 정식
+          </div>
+          <div class="menu-item-price">
+            6900\
+          </div> 
+        </div>    
+      </div>            
+    </div> 
+    
+<script src="script.js"></script>
+</body>
+</html>
