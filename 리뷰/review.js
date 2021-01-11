@@ -190,10 +190,13 @@ exports.recommend_process = function(req, res){
     return;
   }
   else {
+    /*
+      저번에 추천했을때 만든 쿠키가있는지 확인
+    */
     var idx = req.query.idx;
     console.log(req.cookies);
-    if(req.cookies !== undefined || req.cookies['rec5'] !== undefined){
-      console.log("언디파인드 아냐");
+    if(req.cookies !== undefined && req.cookies['rec5'] !== undefined){
+      // 쿠키가 있다면 경고 띄우고 페이지로...
       res.end(`<script>
         alert("you already recommended this review today!");
         window.location.href='/review?idx=${idx}';
@@ -201,13 +204,16 @@ exports.recommend_process = function(req, res){
       return;
     }
     else{
-      db.query("SELECT recommendation FROM reviews where idx = ?", [idx], function(err, data){
+      // 쿠키가 없다면
+      db.query("SELECT recommendation FROM reviews where idx = ?", [idx], function(err, data)
+      {
         if(err)
         {
           throw err;
         }
-        if(data.length !== 0)
+        if(data.length !== 0)     // 게시글이 있다면...
         {
+          // 추천수를 받아와서 +1 해준걸 다시 db에 업데이트 해줌!
           var recommend = data[0].recommendation;
           recommend = parseInt(recommend)+1;
           db.query("UPDATE reviews SET recommendation = ? where idx = ?",[recommend, idx], function(err2){
@@ -215,11 +221,12 @@ exports.recommend_process = function(req, res){
             {
               throw err2;
             }
+            // 쿠키를 생성해서 24시간동안 추천 못하게!
             res.cookie(`rec${idx}`, idx, {maxAge:1000*60*60*24});
             res.redirect(`/review?idx=${idx}`);
           })
         }
-        else {
+        else {          // 게시글이 없다면...
           res.end(`<script>
             alert("Sorry.. We can't find this review...);
             window.location.href='/review';
