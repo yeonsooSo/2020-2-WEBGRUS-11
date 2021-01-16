@@ -1,0 +1,82 @@
+.nav1 {
+			height: 110px;
+			border-bottom: 2px solid gray;
+			display: flex;
+			align-items: center;
+		}
+
+		.nav1-items {
+			display: flex;
+			font-size: 23px;
+			margin-left: 280px;
+			margin-right: auto;
+			font-weight: bold;
+		}
+
+		.nav1-items a {
+			margin-left: 35px;
+		}
+
+		.nav1-item1 {
+			color: RGB(180, 180, 180);
+		}
+
+		.nav1-item2 {
+			color: RGB(180, 180, 180);
+		}
+
+		.nav1-item3 {
+			color: RGB(180, 180, 180);
+		}
+
+		.main {
+			width: 800px;
+			margin: 0 auto;
+			margin-top: 60px;
+		}
+
+		.title {
+			text-align: center;
+			font-size: 30px;
+			font-weight: 400;
+		}
+
+		.subtitle {
+			text-align: center;
+			font-size: 20px;
+			font-weight: 300;
+		}
+
+		.menues {
+			display: flex;
+			margin-top: 30px;
+		}
+
+		.menu-item {
+			width: 350px;
+			height: 260px;
+			margin: 20px;
+			background-color: rgb(233, 233, 233)
+		}
+
+		img {
+			display: block;
+			margin-top: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		.menu-item-name {
+			text-align: center;
+			font-size: 15px;
+			margin-top: 12px;
+			font-weight: bold;
+			color: rgb(109, 109, 109);
+		}
+
+		.menu-item-price {
+			text-align: center;
+			font-size: 15px;
+			margin-bottom: 15px;
+			color: rgb(109, 109, 109);
+		}

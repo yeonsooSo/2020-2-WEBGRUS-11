@@ -1,0 +1,47 @@
+.name {
+  padding-top: 180px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 345px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.login-input-section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-input-wrap input {
+  width: 400px;
+  height: 40px;
+  font-size: 14px;
+}
+.pw-wrap {
+  margin-top: 10px;
+}
+.login-button {
+  padding-top: 14px;
+}
+.login-button button {
+  width: 408px;
+  height: 40px;
+  font-size: 18px;
+  background: var(--background-color);
+  border: solid 1px var(--text-color);
+  cursor: pointer;
+}
+.login-option {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.login-option div {
+  text-align: center;
+  padding: 5px;
+}
