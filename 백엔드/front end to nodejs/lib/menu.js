@@ -11,7 +11,7 @@ exports.get_menu = function(request, response){
   {
     title = "추천 메뉴";
     body = `
-    <div style = "padding-top:100px">
+    <div>
       <div class="nav1">
         <div class="nav1-items">
           <a href="/menu/1"><div class="nav1-item1">추천메뉴</div></a>
@@ -65,7 +65,7 @@ exports.get_menu = function(request, response){
     title = "메뉴";
     body = `
 
-    <div style = "padding-top:100px">
+    <div>
       <div class="nav1">
         <div class="nav1-items">
           <a href="/menu/1"><div class="nav1-item1">추천메뉴</div></a>
@@ -176,7 +176,7 @@ exports.get_menu = function(request, response){
   {
     title = "음료 및 주류";
     body = `
-    <div style="padding-top:100px">
+    <div>
       <div class="nav1">
         <div class="nav1-items">
           <a href="/menu/1"><div class="nav1-item1">추천메뉴</div></a>
