@@ -66,7 +66,7 @@ exports.get_main = function(request, response){
 
       <div class="contents_box">
         <div class="slide_box">
-          <div class="reviews" id="ri"><a href="review.html">REVIEWS</a></div>
+          <div class="reviews" id="ri"><a href="/review">REVIEWS</a></div>
           <div class="slide" id="s1"></div>
           <div class="slide" id="s2"></div>
           <div class="slide" id="s3"></div>
@@ -80,7 +80,7 @@ exports.get_main = function(request, response){
             <div class="dot" onmouseover="changeslide(5)"></div>
           </div>
         </div>
-        <div class="reviews"><a href="review.html">REVIEWS</a></div>
+        <div class="reviews"><a href="/review">REVIEWS</a></div>
       </div>
 
       <div class="footer">
