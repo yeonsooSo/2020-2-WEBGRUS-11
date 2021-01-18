@@ -48,7 +48,7 @@ var reservation = require('./lib/reservation');
 var login = require('./lib/login');
 var storemap = require('./lib/storemap');
 var menu = require('./lib/menu');
-
+var main_page = require('./lib/main_page');
 
 app.use(session({
  secret: '@#@$MYSIGN#@$#$',
@@ -68,22 +68,7 @@ app.use(compression());
 
 // 메인 페이지
 app.get('/', function(request, response){
-  var title = 'Welcome';
-  var logined = false;
-  var sess = request.session;
-  if(sess !== undefined)
-  {
-    if(sess.isLogined === true)
-    {
-      logined = true;
-    }
-  }
-  var head = template.header(template.login(logined));
-
-  var html = template.HTML(title, head,
-  `  `
-  );
-  response.send(html);
+  main_page.get_main(request, response);
 })
 // 오시는길 페이지
 app.get('/store', function(request, response){
