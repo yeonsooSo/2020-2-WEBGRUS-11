@@ -104,8 +104,7 @@
 		.nav1-items {
 			display: flex;
 			font-size: 23px;
-			margin-left: 280px;
-			margin-right: auto;
+			margin-left: 250px;
 			font-weight: bold;
 		}
 
@@ -176,6 +175,46 @@
 			margin-bottom: 15px;
 			color: rgb(109, 109, 109);
 		}
+
+		.bottom {
+			height: 120px;
+			border-top: 2px solid gray;
+			display: flex;
+			align-items: center;
+			background-color: rgb(233, 233, 233);
+			margin-top: 200px;
+		}
+
+		.bottom__info {
+			margin-left: 90px;
+			background-color: rgb(233, 233, 233);
+			font-color: rgb(110, 110, 110);
+			font-size: 14px;
+		}
+
+		@media (min-width : 321px) and (max-width : 560px) {
+			.nav1-items {
+				display: none;
+			}
+			.nav-items {
+				display: none;
+			}
+			.logo {
+				margin-left: 220px;
+			}
+		}
+
+		@media (min-width : 560px) and (max-width : 770px) {
+			.nav1-items {
+				display: none;
+			}
+			.nav-items {
+				display: none;
+			}
+			.logo {
+				margin-left: 300px;
+			}
+		}
 	</style>
 </head>
 
@@ -210,9 +249,9 @@
     </div>
     <div class="nav1">
       <div class="nav1-items">
-        <a href="#"><div class="nav1-item1">추천메뉴</div></a>
-        <a href="#"><div class="nav1-item2">전체메뉴</div></a>
-        <a href="#"><div class="nav1-item3">음료/주류</div></a>
+        <a href="https://html1.jeonginlee.repl.co/"><div class="nav1-item1">추천메뉴</div></a>
+        <a href="https://main.jeonginlee.repl.co/"><div class="nav1-item2">전체메뉴</div></a>
+        <a href="https://drinks.jeonginlee.repl.co/"><div class="nav1-item3">음료/주류</div></a>
       </div>
 
     </div>
@@ -253,7 +292,13 @@
        </div>    
       </div>    
     </div> 
-    
+    <div class="bottom">
+        <div class="bottom__info">
+            <div>번호 : 000-012-3456</div>
+            <div>주소 : 서울시 강남구 삼성로 508 2층</div>
+            <div>이용시간 : 10AM - 10PM</div>
+        </div>   
+     </div>    
 <script src="script.js"></script>
 </body>
 </html>
