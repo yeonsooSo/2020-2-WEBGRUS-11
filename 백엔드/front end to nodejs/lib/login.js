@@ -14,12 +14,12 @@ exports.login_page = function(request, response)
   */
   if(request.session !== undefined)
   {
-    if(request.session.islogined)
+    if(request.session.isLogined)
     {
       response.end(`
       <script>
         alert("you already logged in!!");
-        window.location.href='/login'
+        window.location.href='/'
       </script>`);
       return;
     }
@@ -40,7 +40,7 @@ exports.login_page = function(request, response)
             <input placeholder=" ID" name = "id" type="text"></input>
         </div>
         <div class="login-input-wrap pw-wrap">
-            <input placeholder=" PW" name = "pwd" type="text"></input>
+            <input placeholder=" PW" name = "pwd" type="password"></input>
         </div>
         <div class="login-button">
             <button type="submit">LOG IN</button>
@@ -66,7 +66,7 @@ exports.login_process = function(request, response){
   */
   if(request.session !== undefined)
   {
-    if(request.session.islogined)
+    if(request.session.isLogined)
     {
       response.end(`<script>
         alert("you already logged in!!");
@@ -141,7 +141,7 @@ exports.sign_up_process = function(request, response){
   {
     response.end(`<script>
       alert("Something wrong...");
-      window.location.href='/login';
+      window.location.href='/';
     </script>`);
     return;
   }
@@ -192,11 +192,11 @@ exports.sign_up = function(request, response){
   */
   if(request.session !== undefined)
   {
-    if(request.session.islogined === true)
+    if(request.session.isLogined === true)
     {
       response.end(`<script>
         alert("you already logged in!!");
-        window.location.href='/login'
+        window.location.href='/'
       </script>`);
       return;
     }
