@@ -67,7 +67,7 @@ a {
 }
 /**/
 .name {
-  padding-top: 15%;
+  padding-top: 10%;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 15%;
@@ -82,6 +82,57 @@ a {
   font-size: 20px;
   font-weight: bold;
   color: var(--text-color);
+}
+.sub_name_han {
+  margin-left: 16.6%;
+  padding: 8px;
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.pre_box {
+  width: 215px;
+  height: 52px;
+  border: 1px solid;
+  margin: 20px;
+  margin-left: 19%;
+  margin-bottom: 4%;
+  color: var(--background-color);
+  border-radius: 3px;
+  padding: 6px;
+}
+.pre_box .date {
+  display: flex;
+}
+.pre_box .headcount {
+  display: flex;
+}
+
+.pre_box .cat {
+  color: var(--background-color);
+  font-weight: bold;
+  margin: 4px;
+  font-size: 13px;
+}
+.pre_box .content {
+  color: var(--text-color);
+  margin: 4px;
+
+  font-size: 13px;
+}
+
+.revise_info {
+  border: 1px solid var(--text-color);
+  background: none;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 6px;
+  margin-left: 15px;
+  padding: 4px 8px;
+}
+.info_btn {
+  display: flex;
 }
 
 .info_table {
