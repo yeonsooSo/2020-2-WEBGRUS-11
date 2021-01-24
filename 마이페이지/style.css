@@ -67,14 +67,41 @@ a {
 }
 /**/
 .name {
-  padding-top: 180px;
+  padding-top: 15%;
   margin-top: 40px;
   margin-bottom: 40px;
-  margin-right: 345px;
-  text-align: center;
+  margin-left: 15%;
   font-size: 24px;
   font-weight: bold;
   color: var(--text-color);
+}
+
+.sub_name {
+  margin-left: 17%;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.info_table {
+  width: 65%;
+  margin: auto;
+  border-top: 1px solid var(--text-color);
+  border-collapse: collapse;
+  font-size: 13px;
+  font-weight: bold;
+}
+td {
+  border-bottom: 1px solid #444444;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.info_table .info {
+  text-align: left;
+  padding-left: 15px;
+  font-size: 13px;
+  color: var(--background-color);
 }
 
 /**/
