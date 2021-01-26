@@ -49,6 +49,7 @@ var login = require('./lib/login');
 var storemap = require('./lib/storemap');
 var menu = require('./lib/menu');
 var main_page = require('./lib/main_page');
+var mypage = require('./lib/mypage');
 
 app.use(session({
  secret: '@#@$MYSIGN#@$#$',
@@ -74,7 +75,7 @@ app.get('/', function(request, response){
 app.get('/store', function(request, response){
   storemap.map_page(request, response);
 })
-// 메뉴 menu의 종류를 param으로 받기
+// 메뉴 페이지 (menu의 종류를 param으로 받았음)
 app.get('/menu/:menuId', function(request, response){
   menu.get_menu(request,response);
 })
@@ -91,6 +92,7 @@ app.post('/login_process', function(request, response){
 app.get('/logout_process', function(request, response){
   login.logout_process(request, response);
 })
+
 // 아이디 찾기 페이지
 app.get('/find_ID', function(request, response){
 
@@ -99,6 +101,7 @@ app.get('/find_ID', function(request, response){
 app.get('/find_PW', function(request, response){
 
 })
+
 // 회원가입 페이지
 app.get('/sign_up', function(request, response){
   login.sign_up(request, response);
@@ -107,6 +110,16 @@ app.get('/sign_up', function(request, response){
 app.post('/sign_up_process', function(request, response){
   login.sign_up_process(request, response);
 })
+
+// 정보 변경 폼
+app.get('/update_inform', function(request, response){
+  mypage.update_inform(request, response);
+})
+// 정보 변경 api
+app.post('/update_inform_process', function(request, response){
+  mypage.update_inform_process(request, response);
+})
+
 //리뷰 페이지
 app.get('/review', function(request, response){
   review.review_page(request, response);
@@ -119,6 +132,11 @@ app.post('/review_write_process', upload.single('photo'), function(request, resp
 app.get('/review_delete_process', function(request, response){
   review.review_delete_process(request, response);
 })
+
+// 예약 페이지 api
+app.get('/reservation', function(request, response){
+  reservation.reservation_page(request, response);
+})
 // 예약 api
 app.post('/reservation_process', function(request, response){
   reservation.reservation_process(request, response);
@@ -127,6 +145,8 @@ app.post('/reservation_process', function(request, response){
 app.get('/reservation_delete', function(request, response){
   reservation.reservation_delete(request, response);
 })
+
+
 
 
 // 에러시 출력 페이지
