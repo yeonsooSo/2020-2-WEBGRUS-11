@@ -1,0 +1,528 @@
+
+.find_ID, .find_password{
+  width: 25vw;
+  height: 26vh;
+  margin: 2vw;
+  border: 2px solid #CCCCCC;
+  display: inline-block;
+  text-align: left;
+  padding: 10px;
+}
+.user_info_wrapper{
+  display: inline-block;
+  line-height: 4vh;
+}
+.find_wrapper{
+  display: inline-block;
+  width: 80vw;
+  position: relative;
+  top: 15vh;
+}
+
+.sp_title{
+  font-size: 13pt;
+  font-weight: bold;
+  padding: 15px;
+}
+
+input{
+  width: 15vw;
+}
+span{
+  font-weight: bold;
+}
+
+.inf_span{
+  width: 5vw;
+  display: inline-block;
+}
+
+html, body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  border: 0px;
+}
+table{
+  user-select: none;
+}
+body{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+
+li{
+  color: grey;
+  font-style: bold;
+  font-weight: bold;
+  display: block;
+  float: left;
+  transition:1s;
+  transition-property: color, font-size;
+}
+
+li:hover{
+  color: black ;
+  font-size: 17pt;
+}
+
+.blank{
+  width: 10vw;
+}
+
+.list1 {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 2vw;
+}
+
+
+ul{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 60vw;
+}
+
+.logo{
+   width: 150px;
+   height: 60px;
+   border-left: auto;
+   border-right: auto;
+   background-color: white;
+   display:block;
+}
+
+.container{
+  width: 100vw;
+  height: 115vh;
+  background-color: white;
+}
+
+.navbar{
+  width: 100%;
+  height: 12vh;
+  background-color: #eae8ea;
+  display: flex;
+  flex-direction:column;
+}
+.navtop{
+  display: flex;
+  justify-content: center;
+}
+
+.navmid{
+  display:  flex;
+  height: 30%;
+}
+.hr95_in06{
+  width: 95%;
+  background-color: #CCCCCC;
+  opacity: 0.6;
+}
+.hr95_in02{
+  width: 95%;
+  background-color: #CCCCCC;
+  opacity: 0.2;
+}
+
+.navbot{
+  display: flex;
+  justify-content:flex-end;
+  margin-right: 15vw;
+
+}
+#calendar tr td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#hmp {
+  color: #CCCCCC;
+  width: 20vw;
+  margin-left: 3vw;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+.navtop{
+  margin-top: 2vh;
+}
+
+table{
+    width: 100%;
+    text-align:center;
+    height: 100%;
+}
+td{
+  transition: 0.5s;
+}
+td:hover{
+  background-color: #EAE8EA;
+}
+.hr95{
+  width: 95%;
+}
+
+.numbox{
+  display: inline-block;
+  width: 9vw;
+  letter-spacing: none;
+  font-size: 0;
+}
+h5{
+  position: relative;
+  display: inline-block;
+  left: 2vw;
+}
+.nb{
+  display: inline-block;
+  border: 1px solid #CCCCCC;
+  width: 2.5vw;
+  height: 2.4vw;
+  margin: 0;
+  font-size: 15pt;
+  padding-top: 3%;
+  text-align: center;
+  cursor: pointer;
+}
+.resbutton{
+  width: 30vw;
+  text-align: center;
+  transition: 0.5s;
+  font-weight: bold;
+  border: 1px solid black;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  background-color: #EAE8EA;
+}
+.rbcen{
+
+  text-align: center;
+  display: block;
+  width: 30vw;
+}
+.resbutton:hover{
+  background-color: #CCCCCC
+}
+
+.rt{
+  border: none;
+  background-color: inherit;
+  width: 9vw;
+  text-align: center;
+  border: 1px solid black;
+  height: 3vh;
+  margin: 2.5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+#date{
+  position: relative;
+  left: 40%;
+  border: none;
+  width: 10vw;
+}
+
+button{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 6vw;
+  height: 3vh;
+  cursor: pointer;
+  position: relative;
+  left: 18vw;
+  border: 1px solid black;
+  transition: 0.5s;
+  top: 1vh;
+}
+button:hover{
+  background-color: grey;
+}
+
+button:focus {outline:none;}
+
+.button{
+  background-color: #eae8ea;
+  font-size: small;
+  color: grey;
+  border: 1px solid grey;
+  margin: 5px;
+  padding: 10px;
+  transition: 1s;
+  height: auto;
+  width: auto;
+  display: inline-flex;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.button:hover{
+  background-color: white;
+}
+
+.bottonbox{
+  width: 20vw;
+  position: block;
+  display: block;
+}
+
+
+.contents_box{
+  height: 80vh;;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  margin-bottom: 10vh;
+  text-align: center;
+}
+.footer{
+  height: 15vh;
+  line-height: 25px;
+  background-color: #eae8ea;
+}
+
+
+
+.footerleft{
+  font-weight: bold;
+  color: grey;
+  width: 70vw;
+  position: relative;
+  display: inline-block;
+  left: 6vw;
+  top: 4vh
+}
+
+.footerright{
+  display: inline-block;
+  font-size: large;
+  letter-spacing: 1vw;
+  position: relative;
+  left: 12vw;
+}
+
+.res_wrapper{
+  width: 30vw;
+  height: auto;
+  margin-top: 5vh;
+  transition: 0.5s;
+  line-height: normal;
+}
+
+.res_box{
+  border: 1px solid black;
+  height: auto;
+  padding-bottom: 3vh;
+  transition: 0.5s;
+}
+.res_inf{
+  width: 30vw;
+  height: 30vh;
+  border: 1px solid black;
+  display: inline-block;
+  line-height: 1px;
+  margin-bottom: 2vh;
+}
+.res_inf h5{
+  display: inline-block;
+  width: 5vw;
+}
+.res_inf_text{
+  width: 20vw;
+  display: inline-block;
+  border: 1px solid black;
+  justify-content: center;
+  position: relative;
+  left: 2vw;
+  height: 2vh;
+  top: 0.5vh;
+}
+
+textarea{
+  resize: none;
+}
+.fa-chevron-up{
+  display: none;
+}
+
+#ri{
+  z-index: 6;
+}
+
+
+.button a{
+  color: grey;
+  text-decoration: none;
+}
+
+
+.footerright a{
+  color: grey;
+}
+
+#lgin{
+  display: none;
+}
+/*Responsive Styles*/
+
+/* Smartphones (portrait) ---------------- */
+
+@media only screen and (max-width : 320px){
+
+
+
+
+/* Smartphones (landscape) ---------------- */
+
+@media only screen
+
+and (min-width : 321px)
+
+and (max-width : 799px)
+
+{
+
+  .list1 {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 1vw;
+  }
+
+.logo{
+  width: 100px;
+  height: 50px;
+}
+
+li{
+  font-size: 9pt;
+}
+
+li:hover{
+  font-size: 13pt;
+}
+
+.button{
+  font-size: 5pt;
+  padding: 5px;
+  margin: 3px;
+}
+.buttonbox{
+  position: relative;
+  width: 15vw;
+  right: 30px;
+}
+ul{
+  width: 70vw;
+}
+.navbar{
+  width: 100vw;
+
+}
+
+
+.footer{
+  font-size: 10pt;
+}
+
+.button{
+  display: none;
+}
+#lgin{
+  display: block;
+  font-size: 10pt;
+  border: none;
+  margin-left: 30px;
+  background-color: none;
+}
+
+}
+
+
+/* Tablets (landscape) ------------------- */
+
+@media only screen
+
+and (min-device-width : 800px)
+
+and (max-device-width : 1024px)
+
+and (orientation : landscape)
+
+{
+
+  .logo{
+    width: 100px;
+    height: 50px;
+  }
+
+  li{
+    font-size: 11pt;
+  }
+
+  li:hover{
+    font-size: 13pt;
+  }
+
+  .button{
+    font-size: 5pt;
+    padding: 5px;
+    margin: 3px;
+  }
+
+  .buttonbox{
+    position: relative;
+    width: 15vw;
+    right: 30px;
+  }
+  ul{
+    width: 70vw;
+  }
+  .navbar{
+    width: 100vw;
+  }
+  .reviews{
+    font-size: 12px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0px;
+  }
+
+  .footer{
+    font-size: 10pt;
+  }
+
+}
+
+
+
+
+/* Old Desktops and laptops ------------------ */
+
+@media only screen
+
+and (min-width : 1025px)
+
+{
+
+  li:hover{
+    color: black ;
+    font-size: 15pt;
+  }
+
+}
