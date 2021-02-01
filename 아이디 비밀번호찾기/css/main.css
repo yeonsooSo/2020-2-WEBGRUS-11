@@ -1,12 +1,13 @@
 
 .find_ID, .find_password{
   width: 25vw;
-  height: 26vh;
+  height: auto;
   margin: 2vw;
   border: 2px solid #CCCCCC;
   display: inline-block;
   text-align: left;
   padding: 10px;
+  padding-bottom: 15px;
 }
 .user_info_wrapper{
   display: inline-block;
@@ -16,6 +17,7 @@
   display: inline-block;
   width: 80vw;
   position: relative;
+  height: auto;
   top: 15vh;
 }
 
@@ -238,10 +240,10 @@ h5{
 }
 
 button{
-  padding: 0;
+  padding: 2px;
   margin: 0;
   border: 0;
-  width: 6vw;
+  width: auto;
   height: 3vh;
   cursor: pointer;
   position: relative;
