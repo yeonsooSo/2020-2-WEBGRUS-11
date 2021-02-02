@@ -6,3 +6,10 @@ toggleBtn.addEventListener("click", () => {
   menu.classList.toggle("active");
   login.classList.toggle("active");
 });
+
+function check() {
+  if (confirm("예약을 취소하시겠습니까?")) {
+    alert("예약이 취소되었습니다.");
+  } else {
+  }
+}

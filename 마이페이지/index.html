@@ -24,8 +24,8 @@
             <li><a href="#">MY PAGE</a></li>            
         </ul>
         <div class="navbar__login">
-            <button class="btn btn1">LOG IN</button>
-			<button class="btn btn2">SIGN UP</button>
+            <button class="btn btn1" onclick="location.href='#'">LOG IN</button>
+			<button class="btn btn2" onclick="location.href='#'">SIGN UP</button>
         </div>
 
         <a href="#" class="navbar__toggleBtn">
@@ -43,10 +43,14 @@
     </div>
 
     <div class="pre_box">
+
         <div class="date">
             <div class="cat">일정</div>
             <div class="content">YYYY.MM.DD.(a) AM/PM 00:00</div>
+            <input class="cancel" type="button" onClick="check()" value="x">
+        
         </div>
+
         <div class="headcount">
             <div class="cat">인원</div>
             <div class="content">0 명</div>
@@ -57,7 +61,7 @@
         <div class="sub_name">
             INFO
         </div>
-        <button class=revise_info>
+        <button class=revise_info onclick="location.href='#'">
             정보 수정
         </button>
     </div>
@@ -79,7 +83,6 @@
           <tr>
             <td class="info">생년월일</td><td>(생년월일)</td>
           </tr>
-
         </tbody>
     </table>
 

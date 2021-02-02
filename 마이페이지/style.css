@@ -55,9 +55,11 @@ a {
   cursor: pointer;
   margin: 6px;
   padding: 4px 8px;
+  outline: 0;
 }
 .btn2 {
   background-color: aliceblue;
+  outline: 0;
 }
 .navbar__toggleBtn {
   position: absolute;
@@ -92,7 +94,7 @@ a {
 }
 
 .pre_box {
-  width: 215px;
+  width: 228px;
   height: 52px;
   border: 1px solid;
   margin: 20px;
@@ -104,6 +106,7 @@ a {
 }
 .pre_box .date {
   display: flex;
+  justify-content: space-between;
 }
 .pre_box .headcount {
   display: flex;
@@ -121,6 +124,21 @@ a {
 
   font-size: 13px;
 }
+.cancel {
+  align-items: center;
+  font-size: 6px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--text-color);
+  background: none;
+  border-radius: 2px;
+  padding: 1px;
+  outline: 0;
+}
+.cancel:hover {
+  background-color: var(--background-color);
+  border-radius: 2px;
+}
 
 .revise_info {
   border: 1px solid var(--text-color);
@@ -130,6 +148,7 @@ a {
   margin: 6px;
   margin-left: 15px;
   padding: 4px 8px;
+  outline: 0;
 }
 .info_btn {
   display: flex;
