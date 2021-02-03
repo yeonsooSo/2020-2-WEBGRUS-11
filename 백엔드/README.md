@@ -6,7 +6,7 @@
 
 
 ## 마이 페이지
-![마이페이지](https://i.ibb.co/JcFqyJq/image.png)
+![마이페이지](https://i.ibb.co/GvVBxVM/121.png)
 
 
 ## 로그인 페이지
