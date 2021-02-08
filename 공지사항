@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      body {
+        margin: 0px;
+      }
+
+      a {
+        color: rgb(150, 150, 150);
+        text-decoration: none;
+      }
+
+      .nav {
+        height: 100px;
+        border-bottom: 3px solid gray;
+        display: flex;
+        align-items: center;
+        background-color: rgb(233, 233, 233);
+      }
+
+      .logo {
+        width: 130px;
+        height: 70px;
+        border: 1px solid black;
+        margin-bottom: 15px;
+        margin-left: 120px;
+      }
+
+      .logo-items {
+        text-align: center;
+      }
+
+      .nav-items {
+        display: flex;
+        font-size: 17px;
+        font-weight: bold;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .nav-items a {
+        margin-left: 50px;
+        color: black;
+      }
+
+      .nav-item1 {
+        color: rgb(110, 110, 110);
+      }
+
+      .nav-item2 {
+        color: rgb(110, 110, 110);
+      }
+
+      .nav-item3 {
+        color: rgb(110, 110, 110);
+      }
+
+      .nav-item4 {
+        color: rgb(110, 110, 110);
+      }
+
+      .nav-item5 {
+        color: rgb(110, 110, 110);
+      }
+
+      .member-items {
+        display: flex;
+        margin-left: 170px;
+      }
+
+      .member-item {
+        width: 60px;
+        height: 35px;
+        margin-left: 20px;
+        border: solid 1px black;
+        font-size: 13px;
+      }
+
+      .nav1 {
+        height: 110px;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav1-items {
+        display: flex;
+        font-size: 23px;
+        margin-left: 90px;
+        font-weight: bold;
+      }
+
+      .nav1-items a {
+        margin-left: 35px;
+      }
+
+      .nav1-item1 {
+        color: black;
+      }
+
+      .main {
+        width: 950px;
+        margin: 0 auto;
+        margin-top: 60px;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 400;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 300;
+      }
+
+      .RV {
+        display: flex;
+        margin-top: 30px;
+      }
+
+      .RV-item {
+        width: 280px;
+        height: 230px;
+        margin: 20px;
+        background-color: white;
+        border: 8px solid rgb(233, 233, 233);
+      }
+
+      .RV-item-box {
+        width: 220px;
+        height: 180px;
+        margin: 20px;
+      }
+
+      .RV-item-DAY {
+        font-size: 15px;
+        color: rgb(85, 117, 253);
+      }
+
+      .RV-item-MENU {
+        font-size: 15px;
+        margin: 10px 0px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .RV-item-CONTENT {
+        font-size: 13px;
+        margin-top: 0px;
+        width: 220px;
+        height: 100px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .RV-item-HITS {
+        text-align: right;
+        font-size: 13px;
+        margin-bottom: 15px;
+        color: rgb(109, 109, 109);
+      }
+
+      .bottom {
+        height: 120px;
+        border-top: 2px solid gray;
+        display: flex;
+        align-items: center;
+        background-color: rgb(233, 233, 233);
+        margin-top: 700px;
+      }
+
+      .bottom__info {
+        margin-left: 90px;
+        background-color: rgb(233, 233, 233);
+        color: rgb(110, 110, 110);
+        font-size: 14px;
+      }
+
+      .page {
+        margin: 30px 700px;
+        display: flex;
+      }
+
+      .page-items {
+        text-align: center;
+      }
+
+      .page-item0 {
+        margin-right: 10px;
+      }
+
+      .page-item1 {
+        margin-right: 10px;
+      }
+
+      .page-item2 {
+        margin-right: 10px;
+      }
+
+      .page-item3 {
+        margin-right: 10px;
+      }
+
+      .page-item4 {
+        margin-right: 10px;
+      }
+
+      @media (min-width: 321px) and (max-width: 560px) {
+        .nav1-items {
+          display: none;
+        }
+        .nav-items {
+          display: none;
+        }
+        .logo {
+          margin-left: 220px;
+        }
+      }
+
+      @media (min-width: 560px) and (max-width: 770px) {
+        .nav1-items {
+          display: none;
+        }
+        .nav-items {
+          display: none;
+        }
+        .logo {
+          margin-left: 300px;
+        }
+      }
+
+      td.article {
+        /*article 클래스가 적용된 열만 좌측 정렬*/
+        text-align: left;
+      }
+
+      table {
+        position: absolute;
+        top: 220px;
+        left: 100px;
+        width: 1200px;
+        border-collapse: collapse;
+        border-top: 2px solid #8d8d8d;
+      }
+      td {
+        padding: 10px 8px; /*padding: vertical horizontal;*/
+        text-align: center;
+        line-height: 1em;
+        color: #666;
+        border-bottom: 1px solid #8d8d8d;
+      }
+
+      nav {
+        position: absolute;
+        top: 870px;
+        left: 520px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-items"><a href="#"> Logo </a></div>
+      </div>
+      <div class="nav-items">
+        <a href="#">
+          <div class="nav-item1">INTRODUCE</div>
+        </a>
+        <a href="#">
+          <div class="nav-item2">MENU</div>
+        </a>
+        <a href="#">
+          <div class="nav-item3">RESERVATION</div>
+        </a>
+        <a href="#">
+          <div class="nav-item4">NOTIFY</div>
+        </a>
+        <a href="#">
+          <div class="nav-item5">MY PAGE</div>
+        </a>
+        <div class="member-items">
+          <button class="member-item">Log In</button>
+          <button class="member-item">Sign up</button>
+        </div>
+      </div>
+    </div>
+    <div class="nav1">
+      <div class="nav1-items">
+        <a href="https://bonypurplevisitors.jeonginlee.repl.co/"
+          ><div class="nav1-item1">공지 및 이벤트</div></a
+        >
+      </div>
+    </div>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>12</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td class="article"><a href="#none">공지사항 내용</a></td>
+          <td>2021-01-01</td>
+        </tr>
+        <tr>
+          <td colspan="3">등록된 뉴스가 없습니다</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <nav>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      ...
+      <button>10</button>
+      <button class="next">다음</button>
+      <button class="back">이전</button>
+    </nav>
+
+    <div class="bottom">
+      <div class="bottom__info">
+        <div>번호 : 000-012-3456</div>
+        <div>주소 : 서울시 강남구 삼성로 508 2층</div>
+        <div>이용시간 : 10AM - 10PM</div>
+      </div>
+    </div>
+  </body>
+</html>
