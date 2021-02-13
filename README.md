@@ -5,6 +5,10 @@
 - 화면 프로토타입 및 플로우
 
    https://drive.google.com/drive/folders/10stQT8C1lm8oLeuM0rxP4dKTYIORMM9A?usp=sharing
+   
+   - 이미지
+   
+   https://drive.google.com/drive/u/1/folders/1ispMqi3wYoshxXxDl9dH-FUPSmAAsK7l
 
 
 - 개발 일지
