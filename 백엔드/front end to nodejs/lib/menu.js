@@ -29,27 +29,33 @@ exports.get_menu = function(request, response){
         </div>
         <div class="menues">
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_galbi.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_galbi.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              갈비탕
             </div>
             <div class="menu-item-price">
               6900\
             </div>
           </div>
           <div class="menu-item">
-             <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+             <a href='/photos/menu_cow_ginseng_bbq.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_cow_ginseng_bbq.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              소고기 수삼 구이
             </div>
             <div class="menu-item-price">
               6900\
             </div>
           </div>
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_silver_Pacific_cod_yuja_bbq.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_silver_Pacific_cod_yuja_bbq.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              은 대구 유자 구이
             </div>
             <div class="menu-item-price">
               6900\
@@ -83,85 +89,81 @@ exports.get_menu = function(request, response){
         </div>
         <div class="menues">
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_galbi.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_galbi.jpg' border='0' width='180' >
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              갈비탕
             </div>
             <div class="menu-item-price">
-              6900\
+              6900
             </div>
           </div>
           <div class="menu-item">
-             <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+             <a href='/photos/menu_cow_mushroom_bbq.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_cow_mushroom_bbq.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              소고기 송이 구이
             </div>
             <div class="menu-item-price">
-              6900\
+              9900
             </div>
           </div>
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_sanjuck.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_sanjuck.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              별미 산적
             </div>
             <div class="menu-item-price">
-              6900\
+              4900
             </div>
           </div>
         </div>
         <div class="menues">
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_silver_Pacific_cod_yuja_bbq.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_silver_Pacific_cod_yuja_bbq.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              은 대구 유자 구이
             </div>
             <div class="menu-item-price">
-              6900\
+              12900 (3pc)
             </div>
           </div>
           <div class="menu-item">
-             <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+             <a href='/photos/menu_sweet_pumpkin_soup.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_sweet_pumpkin_soup.jpg' border='0' width='180' height = "180">
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              단호박 죽
             </div>
             <div class="menu-item-price">
-              6900\
+              6900
             </div>
           </div>
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_cow_ginseng_bbq.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_cow_ginseng_bbq.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+              소고기 수삼 구이
             </div>
             <div class="menu-item-price">
-              6900\
+              9900\
             </div>
           </div>
         </div>
-              <div class="menues">
-          <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+        <div class="menues">
+          <div class="menu-item" style = "width: 226px">
+            <a href='/photos/menu_black_soup.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_black_soup.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
-            </div>
-            <div class="menu-item-price">
-              6900\
-            </div>
-          </div>
-          <div class="menu-item">
-             <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
-            </div>
-            <div class="menu-item-price">
-              6900\
-            </div>
-          </div>
-          <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
+              흑임자 죽
             </div>
             <div class="menu-item-price">
               6900\
@@ -183,8 +185,8 @@ exports.get_menu = function(request, response){
           <a href="/menu/2"><div class="nav1-item2">전체메뉴</div></a>
           <a href="/menu/3"><div class="nav1-item3">음료/주류</div></a>
         </div>
-
       </div>
+
       <div class="main">
         <div class="title">
           음료/주류
@@ -192,87 +194,36 @@ exports.get_menu = function(request, response){
         <div class="subtitle">
           미성년자에게는 주류를 판매하지 않습니다.
         </div>
+
         <div class="menues">
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_white_wine.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_white_wine.jpg' border='0' width='180'>
+            </a>
             <div class="menu-item-name">
-              콜라
-            </div>
-            <div class="menu-item-price">
-              1900\
-            </div>
-          </div>
-          <div class="menu-item">
-             <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
+              화이트 와인
             </div>
             <div class="menu-item-price">
               6900\
             </div>
           </div>
           <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+             <a href='/photos/menu_champagne.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_champagne.jpg' border='0' width='180'>
+             </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
+                샴페인
             </div>
             <div class="menu-item-price">
-              6900\
-            </div>
-          </div>
-        </div>
-        <div class="menues">
-          <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
-            </div>
-            <div class="menu-item-price">
-              6900\
+              5000
             </div>
           </div>
           <div class="menu-item">
-             <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
+            <a href='/photos/menu_red_wine.jpg' alt='메뉴1' target='_blank'>
+              <img src='/photos/menu_red_wine.jpg' border='0' width='180' >
+            </a>
             <div class="menu-item-name">
-              뚝배기 불고기 정식
-            </div>
-            <div class="menu-item-price">
-              6900\
-            </div>
-          </div>
-          <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
-            </div>
-            <div class="menu-item-price">
-              6900\
-            </div>
-          </div>
-        </div>
-              <div class="menues">
-          <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
-            </div>
-            <div class="menu-item-price">
-              6900\
-            </div>
-          </div>
-          <div class="menu-item">
-             <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
-            </div>
-            <div class="menu-item-price">
-              6900\
-            </div>
-          </div>
-          <div class="menu-item">
-            <a href='https://ifh.cc/v-DSQEYF' alt='메뉴1' target='_blank'><img src='https://ifh.cc/g/DSQEYF.jpg' border='0' width='180' ></a>
-            <div class="menu-item-name">
-              뚝배기 불고기 정식
+              레드 와인
             </div>
             <div class="menu-item-price">
               6900\
