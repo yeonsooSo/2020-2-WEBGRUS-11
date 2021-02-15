@@ -66,11 +66,11 @@ exports.get_main = function(request, response){
       <div class="contents_box">
         <div class="slide_box">
           <div class="reviews" id="ri"><a href="/review">REVIEWS</a></div>
-          <div class="slide" id="s1"></div>
-          <div class="slide" id="s2"></div>
-          <div class="slide" id="s3"></div>
-          <div class="slide" id="s4"></div>
-          <div class="slide" id="s5"></div>
+            <img src = "/photos/restaurant.jpg" class = "slide" id = "s1">
+            <img src = "/photos/table1.jpg" class = "slide" id = "s2">
+            <img src = "/photos/table3.jpg" class = "slide" id = "s3">
+            <img src = "/photos/dish.jpg" class = "slide" id = "s4">
+            <img src = "/photos/table2.jpg" class = "slide" id = "s5">
           <div class="dotbox">
             <div class="dot" onmouseover="changeslide(1)"></div>
             <div class="dot" onmouseover="changeslide(2)"></div>
