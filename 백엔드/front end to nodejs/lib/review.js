@@ -6,26 +6,217 @@ var session = require('express-session');
 var path = require('path');
 var fs = require('fs');
 var cookieParser = require('cookie-parser')
-// 바꿔야 하는 리뷰페이지 보여주기
+
+// 리뷰페이지 보여주기
 exports.review_page = function(request, response){
-  var title = "aa"
-  var logined = false;
-  var head = template.header(template.login(logined));
+  var page_num = request.query.page_num;
+  if(page_num === undefined || page_num < 1)
+  {
+    page_num = 1;
+  }
+  var review_s = (page_num-1)*6;      // 이 페이지의 시작 리뷰 idx
+  var review_e = (page_num-1)*6+6;    // 이 페이지의 마지막 리뷰 idx
+  db.query("SELECT * FROM reviews ORDER BY idx desc LIMIT ?,?",[review_s, review_e], function(err, data)
+  {
+      if(err)
+      {
+        throw err;  return;
+      }
+      else
+      {
+        var review_list = "";
+        for(var i = 0; i < data.length;)
+        {
+          review_list += '<div class="RV">';
+          var cnt = 0;
+          while(i < data.length){
+            if(cnt == 3)
+            {
+              break;
+            }
+            var idx = data[i].idx;
+            var id = data[i].id;
+            var hit = data[i].hit;
+            var menu = data[i].menu;
+            var intext = data[i].intext;
+            var date = data[i].date;
+            var date = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
+            var filename = data[i].filename;
+            var recommendation = data[i].recommendation;
+            var stars = "별점: ";
+            for(var j = 0;j<recommendation;j++)
+            {
+              stars += '<i class="fas fa-star"></i>';
+            }
+            for(var j = recommendation; j<5;j++)
+            {
+              stars += '<i class="far fa-star"></i>';
+            }
+            stars = `<span style="color:rgb(150, 150, 150)">${stars}</span>`
+            review_list += `
 
-  var html = template.HTML(title, head,
-  `
-  <!-- 테스트용으로 글쓸수있게 만든거라 제대로 만든 목록 페이지로 바꿔야해요-->
-  <form method="POST" enctype="multipart/form-data" action="/review_write_process">
-      <input type="text" name = "title" placeholder="제목">
-      <textarea name="intext" placeholder = "본문"></textarea>
-      <input type="file" name="photo">
+              <div class="RV-item">
+                <a href = "/review_watch/?idx=${idx}">
+                  <div class="RV-item-box">
+                    <div class="RV-item-DAY">
+                    ${date}
+                    </div>
+                    <div class="RV-item-MENU">
+                      ${menu}
+                    </div>
+                    <div class="RV-item-CONTENT">
+                       ${intext}
+                    </div>
+                    <div class="RV-item-STAR">
+                    ${stars}
+                    </div>
+                    <div class="RV-item-HITS">
+                    조회수 ${hit}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            `
+            cnt++;
+            i++;
+          }
+          review_list += "</div> "
+        }
+        db.query("SELECT COUNT(*) FROM reviews", function(err1, data1){
+          if(err1)
+          {
+            throw err;  return;
+          }
+          else
+          {
+            //리뷰 개수
+            var sum_of_reviews = data1[0]['COUNT(*)'];
+            var sum_of_pages = parseInt(sum_of_reviews/6);
+            if(sum_of_reviews%6 != 0)
+            {
+              ++sum_of_pages;
+            }
 
-      <input type="submit" value="upload" name="submit">
-  </form>
+            // 페이지 링크 만들기
+            var page_links = "";
+            var page_s = parseInt(page_num/10)*10 + 1;
+            var page_e = page_s + 9 > sum_of_pages ? sum_of_pages : page_s + 9;
 
-  `
-  );
-  response.send(html);
+            for(var i = page_s; i <= page_e; i++)
+            {
+              page_links += `
+                <a href="/review/?page_num=${i}" class = page-item0>${i}</a>
+              `
+            }
+            var page_prev = page_s - 1 < 1 ? 1 : page_s-1;
+            var page_next = page_e + 1 > sum_of_pages ? sum_of_pages : page_e+1;
+            // html만들기
+
+            var title = "REVIEW";
+            var logined = false;
+            if(request.session !== undefined && request.session.isLogined === true)
+            {
+              logined = true;
+            }
+            var head = template.header(template.login(logined));
+            var html = template.HTML(title, head,  `
+              <div class="nav1">
+                <div class="nav1-items">
+                  <a href="/review"><div class="nav1-item1">고객리뷰</div></a>
+                  <a href="/review_write"><div class="nav1-item2">리뷰작성</div></a>
+                </div>
+              </div>
+              <div class="main">
+
+                ${review_list}
+
+              </div>
+              <!--자바스크립트로 더이상 못가게 만들어줘야해!-->
+              <div class= "page">
+                <a href="/review/?page_num=${page_prev}" class = page-item0>←</a>
+                ${page_links}
+                <a href="/review/?page_num=${page_next}" class = page-item0>→</a>
+              </div>
+            `, "review"
+            );
+            response.send(html);
+          }
+        })
+      }
+  })
+}
+
+// 리뷰 작성 페이지
+exports.review_write = function(request, response){
+  if(request.session === undefined || request.session.isLogined === undefined || request.session.isLogined === false)
+  {
+    response.end(`<script>
+      alert("you are not logged!!");
+      window.location.href='/login';
+    </script>`);
+    return;
+  }
+  else {
+    var title = "Review Write";
+    var logined = true;
+    var head = template.header(template.login(logined));
+
+    var html = template.HTML(title, head,
+    `
+    <div class="nav1">
+        <div class="nav1-items">
+          <a href="/review"><div class="nav1-item1">고객리뷰</div></a>
+          <a href="/review_write"><div class="nav1-item2">리뷰작성</div></a>
+        </div>
+        </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data" action="/review_write_process">
+        <div class="main">
+          <div class="RV"">
+              <div class="RV-item">
+                <div class="RV-item-box">
+                  <div class="RV-item-DAY">
+                    방문일자 : <INPUT TYPE ="DATE" name = "date" id = "calender">
+                  </div>
+                  <div class="RV-item-MENU">
+                    주문메뉴 :
+                      <SELECT style="width:143px;height:25px;" name = "menu">
+                        <OPTION>불고기 정식</OPTION>
+                        <OPTION>파스타 정식</OPTION>
+                        <OPTION>점심 특선 메뉴</OPTION>
+                        <OPTION>초밥 정식</OPTION>
+                        <OPTION>스테이크 정식</OPTION>
+                        <OPTION>메뉴 1</OPTION>
+                        <OPTION>메뉴 2</OPTION>
+                      </select>
+                  </div>
+                  <div class= "RV-item-st">
+                    <input type="radio" name="star" value="1">★
+                    <input type="radio" name="star" value="2">★★
+                    <input type="radio" name="star" value="3">★★★
+                    <input type="radio" name="star" value="4">★★★★
+                    <input type="radio" name="star" value="5" checked = "checked">★★★★★
+                    </div>
+                  <div class= "RV-item-WR">
+                     <textarea rows=20 cols=70 style="text-align:left;" border=gray name = "intext"> </textarea>
+                  </div>
+                  <br>
+                  <div class= "RV-item-WR-bt">
+                    <input type ="submit" value="작성완료">
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      document.getElementById("calender").value = new Date().toISOString().substring(0, 10);
+      // 오늘 날짜로 초깃값 줌
+    </script>
+    `, "review_write"  );
+    response.send(html);
+  }
 }
 
 
@@ -48,8 +239,10 @@ exports.review_write_process = function(request, response){
     var id = request.session.uid;
     //post로 넘겨준 데이터를 각 변수에 넣어줍니다.
     var post = request.body;
-    var title = post.title;
+    var date = post.date;
     var intext = post.intext;
+    var star = post.star;
+    var menu = post.menu;
     if(request.file === undefined)
     {
         var filename = undefined;
@@ -70,7 +263,7 @@ exports.review_write_process = function(request, response){
 
         // 받아온 데이터를 db에 넣어줍니다.
         if(filename){     //첩부파일이 있는 경우
-          db.query("INSERT INTO reviews (id, pwd, title, intext, date, filename) values(?,?,?,?,NOW(),?)", [id, pwd, title, intext, filename], function(err2){
+          db.query("INSERT INTO reviews (id, pwd, menu, intext, date, filename, recommendation) values(?,?,?,?,?,?,?)", [id, pwd, menu, intext, date, filename, star], function(err2){
             if(err2)
             {
               throw err2;
@@ -79,7 +272,7 @@ exports.review_write_process = function(request, response){
           })
         }
         else{     //첨부파일이 없는경우
-          db.query("INSERT INTO reviews (id, pwd, title, intext, date) values(?,?,?,?,NOW())", [id, pwd, title, intext], function(err2){
+          db.query("INSERT INTO reviews (id, pwd, menu, intext, date, recommendation) values(?,?,?,?,?,?)", [id, pwd, menu, intext, date, star], function(err2){
             if(err2)
             {
               throw err2;
@@ -106,7 +299,6 @@ exports.review_delete_process = function(request, response){
   */
   if(request.session === undefined || request.session.isLogined === undefined || request.session.isLogined === false)
   {
-    console.log("shit");
     response.end(`<script>
       alert("you are not logged!!");
       window.location.href='/login';
@@ -115,7 +307,7 @@ exports.review_delete_process = function(request, response){
   }
   else {
     // 세션에서 아이디를 받아옵니다.
-    var id = request.session.uid;
+    var user_id = request.session.uid;
     //get으로 넘겨준 데이터를 각 변수에 넣어줍니다.
     var idx = request.query.idx;
     // 글의 비밀번호를 위해 글을 검색해 비밀번호를 받아옵니다.
@@ -136,7 +328,7 @@ exports.review_delete_process = function(request, response){
           {
             throw errr2;
           }
-          if(memberdata.length != 0 && memberdata[0].pwd === pwd)
+          if(memberdata.length != 0 && memberdata[0].pwd === pwd && id === user_id)
           {
             db.query("DELETE FROM reviews WHERE idx = ?", [idx], function(err3){
               if(err3)
@@ -158,10 +350,11 @@ exports.review_delete_process = function(request, response){
               }
             })
           }
-          else {  // 아이디가 없거나 비밀번호가 다르다면 경고를 띄우고 리뷰페이지로..
+          else {  // 아이디가 없거나 다르거나 비밀번호가 다르다면 경고를 띄우고 리뷰페이지로..
+            console.log(user_id);
             response.end(`<script>
-              alert("Sorry.. There was an ID error...);
-              window.location.href='/review';
+              alert("Sorry.. An account error has occurred...");
+              window.location.href='/review_watch/?idx=${idx}';
             </script>`);
           }
         })
@@ -169,7 +362,7 @@ exports.review_delete_process = function(request, response){
       }
       else {     //해당 리뷰가 없다면 경고문 띄우고 리뷰페이지로 보냅니다.
         response.end(`<script>
-          alert("Sorry.. We can't find this review...);
+          alert("Sorry.. We couldn't found the review...");
           window.location.href='/review';
         </script>`);
       }
@@ -196,7 +389,6 @@ exports.recommend_process = function(req, res){
       저번에 추천했을때 만든 쿠키가있는지 확인
     */
     var idx = req.query.idx;
-    console.log(req.cookies);
     if(req.cookies !== undefined && req.cookies['rec5'] !== undefined){
       // 쿠키가 있다면 경고 띄우고 페이지로...
       res.end(`<script>
@@ -237,4 +429,104 @@ exports.recommend_process = function(req, res){
       })
     }
   }
+}
+
+
+exports.review_watch = function(request, response)
+{
+  var idx = request.query.idx;
+  var title = `${idx}th REVIEW`;
+  var logined = false;
+  if(request.session !== undefined && request.session.isLogined === true)
+  {
+    logined = true;
+  }
+  var head = template.header(template.login(logined));
+
+  db.query("SELECT * FROM reviews WHERE idx = ?", [idx], function(err, data){
+    if(err)
+    {
+      throw err;
+    }
+    else
+    {
+      if(data.length == 0) // 해당되는 데이터가 없다면!
+      {
+        html = template.HTML(title, head,`
+          <h1 style = "text-align:center">"Sorry, No reviews were found...."</h1>
+          `)
+        response.send(html);
+      }
+      else {
+        // 저장값들 받아오고 전처리
+        var pwd = data[0].pwd;
+        var menu = data[0].menu;
+        var intext = data[0].intext;
+        var visit_day = data[0].date;
+        visit_day = visit_day.getFullYear() + '-' + (visit_day.getMonth()+1) + '-' + visit_day.getDate();
+        var hit = data[0].hit + 1;
+        var star = "";
+
+        var recommendation = data[0].recommendation;
+        for(var j = 0;j<recommendation;j++)
+        {
+          star += '<i class="fas fa-star"></i>';
+        }
+        for(var j = recommendation; j<5;j++)
+        {
+          star += '<i class="far fa-star"></i>';
+        }
+        star = `<span style = "color:rgb(150, 150, 150)">${star}</span>`
+        // 전처리 끝!
+
+        // 조회했으므로 조회수 +1
+        db.query("UPDATE reviews SET hit = ? WHERE idx = ?", [hit, idx], function(err2)
+        {
+          if(err2)
+          {
+            throw err2;
+          }
+          else {
+            html = template.HTML(title, head, `
+              <div class="nav1">
+                <div class="nav1-items">
+                  <a href="/review"><div class="nav1-item1">고객리뷰</div></a>
+                  <a href="/review_write"><div class="nav1-item2">리뷰작성</div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="main">
+                <div class="RV"">
+                    <div class="RV-item">
+                      <div class="RV-item-box">
+                        <div class="RV-item-DAY">
+                          방문일자 : ${visit_day}
+                        </div>
+                        <div class="RV-item-MENU">
+                          주문메뉴 :  ${menu}
+                        </div>
+                        <div class="RV-item-STAR">
+                          별점 : ${star}
+                        </div>
+                        <div class= "RV-item-WR">
+                          ${intext}
+                        </div>
+                        <form action = "/review_delete_process">
+                          <input type = "hidden" name = "idx" value = ${idx}>
+                          <div class= "RV-item-WR-bt">
+                            <input type ="submit" value="삭제">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `, "review_watch")
+            response.send(html);
+          }
+        })
+      }
+    }
+  })
 }
