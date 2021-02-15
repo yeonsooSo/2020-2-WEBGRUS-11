@@ -22,7 +22,7 @@ nodejs로  페이지 이미지들입니다.
 
 
 ## 메뉴 페이지
-![메뉴 페이지](https://i.ibb.co/yRdZcRh/1.png)
+![메뉴 페이지](https://i.ibb.co/gFgcw2D/image.png)
 
 
 ## 리뷰 페이지
