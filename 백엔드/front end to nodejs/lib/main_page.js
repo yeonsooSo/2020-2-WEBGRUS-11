@@ -52,7 +52,7 @@ exports.get_main = function(request, response){
         <div class="navmid">
           <div class="blank"></div>
           <ul>
-            <li><a class="list1" href="/introduce">INTRODUCE</a></li>
+            <li><a class="list1" href="/store">INTRODUCE</a></li>
             <li><a class="list1" href="/menu/1">MENU</a></li>
             <li><a class="list1" href="/reservation">RESERVATION</a></li>
             <li><a class="list1" href="/notify">NOTIFY</a></li>
@@ -63,7 +63,6 @@ exports.get_main = function(request, response){
         <div class="navbot">
         </div>
       </div>
-
       <div class="contents_box">
         <div class="slide_box">
           <div class="reviews" id="ri"><a href="/review">REVIEWS</a></div>
@@ -82,7 +81,6 @@ exports.get_main = function(request, response){
         </div>
         <div class="reviews"><a href="/review">REVIEWS</a></div>
       </div>
-
       <div class="footer">
         <div class="footerleft">
           <div class="phonenum">번호 : 000-012-3456</div>
@@ -90,15 +88,14 @@ exports.get_main = function(request, response){
           <div class="time">이용시간 : 10AM ~10PM</div>
         </div>
         <div class="footerright">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/?lang=ko"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
     </div>
   </body>
   </html>
-
   `
   response.send(html);
 }
