@@ -110,7 +110,10 @@ app.get('/sign_up', function(request, response){
 app.post('/sign_up_process', function(request, response){
   login.sign_up_process(request, response);
 })
-
+// 마이페이지
+app.get('/mypage', function(request, response){
+  mypage.mypage_page(request, response);
+})
 // 정보 변경 폼
 app.get('/update_inform', function(request, response){
   mypage.update_inform(request, response);
@@ -123,6 +126,13 @@ app.post('/update_inform_process', function(request, response){
 //리뷰 페이지
 app.get('/review', function(request, response){
   review.review_page(request, response);
+})
+app.get('/review_watch', function(request, response){
+  review.review_watch(request, response);
+})
+// 리뷰 작성 페이지
+app.get('/review_write', function(request, response){
+  review.review_write(request, response);
 })
 // 리뷰 작성 api
 app.post('/review_write_process', upload.single('photo'), function(request, response){
