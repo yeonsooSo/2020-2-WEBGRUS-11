@@ -2,7 +2,7 @@ nodejs로  페이지 이미지들입니다.
 
 
 ## 메인 페이지
-![메인페이지](https://i.ibb.co/ZzVWG6H/image.png)
+![메인페이지](https://i.ibb.co/r2t75T6/image.png)
 
 
 ## 마이 페이지
