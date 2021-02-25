@@ -42,14 +42,15 @@ app.use(express.static('uploads'));
 
 // 우리가 만든 라이브러리 사용
 var template = require('./lib/template.js');
-var db = require('./lib/db')
-var review = require('./lib/review');
-var reservation = require('./lib/reservation');
-var login = require('./lib/login');
-var storemap = require('./lib/storemap');
-var menu = require('./lib/menu');
-var main_page = require('./lib/main_page');
-var mypage = require('./lib/mypage');
+var db = require('./lib/db.js')
+var review = require('./lib/review.js');
+var reservation = require('./lib/reservation.js');
+var login = require('./lib/login.js');
+var storemap = require('./lib/storemap.js');
+var menu = require('./lib/menu.js');
+var main_page = require('./lib/main_page.js');
+var mypage = require('./lib/mypage.js');
+var notify = require('./lib/notify.js')
 
 app.use(session({
  secret: '@#@$MYSIGN#@$#$',
@@ -110,6 +111,37 @@ app.get('/sign_up', function(request, response){
 app.post('/sign_up_process', function(request, response){
   login.sign_up_process(request, response);
 })
+
+// 공지사항
+app.get('/notify', function(request, response){
+  notify.get_list(request, response);
+})
+// 공지사항 보기
+app.get('/notify/view', function(request, response){
+  notify.get_notify(request, response);
+})
+// 공지사항 쓰기
+app.get('/notify_write', function(request, response){
+  notify.notify_write_page(request, response);
+})
+// 공지사항 쓰기 api
+app.post('/notify_write_process', function(request, response){
+  notify.notify_write_process(request, response);
+})
+// 공지사항 삭제 api
+app.get('/notify_delete_process', function(request, response){
+  notify.notify_delete_process(request, response);
+})
+// 공지사항 수정 페이지
+app.get('/notify_modify', function(request, response){
+  notify.notify_modify(request, response);
+})
+// 공지사항 수정 api
+app.get('/notify_modify_process', function(request, response){
+  notify.notify_modify_process(request, response);
+})
+
+
 // 마이페이지
 app.get('/mypage', function(request, response){
   mypage.mypage_page(request, response);
@@ -127,6 +159,7 @@ app.post('/update_inform_process', function(request, response){
 app.get('/review', function(request, response){
   review.review_page(request, response);
 })
+// 리뷰 상세 페이지
 app.get('/review_watch', function(request, response){
   review.review_watch(request, response);
 })
