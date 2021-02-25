@@ -1,0 +1,79 @@
+td.article {
+  /*article 클래스가 적용된 열만 좌측 정렬*/
+  text-align: left;
+}
+
+table {
+  width: 1200px;
+  border-collapse: collapse;
+  border-top: 2px solid #8d8d8d;
+  margin-bottom: 5px;
+}
+td {
+  padding: 10px 8px; /*padding: vertical horizontal;*/
+  text-align: center;
+  line-height: 1em;
+  color: #666;
+  border-bottom: 1px solid #8d8d8d;
+}
+
+#container {
+  position: relative;
+  margin: auto;
+  width: 1200px;
+  padding-bottom: 10px;
+}
+#write {
+  position: absolute;
+  right: 0;
+
+}
+
+.sub {
+  background-color: lightgray;
+  border: 2px solid gray;
+  padding:5px;
+  transition:1s;
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+}
+
+.sub:hover{
+  background-color: white;
+}
+
+.page {
+	width: 500px;
+	margin: auto;
+	text-align: center;
+  padding-top: 20px;
+}
+#intext{
+  resize:none;
+  width:1100px;
+  height:400px;
+}
+.page-items {
+	text-align: center;
+}
+
+.page-item0 {
+	margin-right: 10px;
+}
+
+.del_mod{
+  font-weight: bold;
+}
+
+@media (min-width : 321px) and (max-width : 1100px){
+  #container{
+    width: 800px;
+  }
+  table{
+    width: 800px;
+  }
+  #intext{
+    width: 705px;
+  }
+}
