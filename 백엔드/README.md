@@ -35,3 +35,12 @@ nodejs로  페이지 이미지들입니다.
 
 ## 리뷰 작성 페이지
 ![리뷰 작성 페이지](https://i.ibb.co/p4qKK27/image.png)
+
+## 공지사항 페이지
+![공지사항](https://i.ibb.co/K09rbRV/image.png)
+
+## 공지사항 상세 페이지
+![공지사항 상세](https://i.ibb.co/jW07wPk/image.png)
+
+## 공지사항 쓰기 페이지
+![공지사항 글쓰기](https://i.ibb.co/dkfY0Sv/image.png)
