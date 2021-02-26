@@ -6,35 +6,46 @@
 	<meta name="viewport" content="width=device-width">
 	<title>repl.it</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js">
+	<script>
+		function contentCheck() {
+     var text = document.getElementById("content"); 
+      if(text.value == ' ') {
+        alert ("후기내용을 입력해 주세요.");
+        return false
+      } 
+      else {
+        return true
+      }
+    }
 	</script>
 </head>
 
 <body>
-	<div class="nav">
-		<div class="logo">
-			<div class="logo-items"><a href="#">
-					Logo
-				</a></div>
-		</div>
-		<div class="nav-items">
-			<a href="#">
-				<div class="nav-item1">INTRODUCE</div>
-			</a>
-			<a href="#">
-				<div class="nav-item2">MENU</div>
-			</a>
-			<a href="#">
-				<div class="nav-item3">RESERVATION</div>
-			</a>
-			<a href="#">
-				<div class="nav-item4">NOTIFY</div>
-			</a>
-			<a href="#">
-				<div class="nav-item5">MY PAGE</div>
-			</a>
-			<div class="member-items">
-				<button class="member-item">Log In</button>
+	<form name=form method="post" onsubmit="return contentCheck()">
+		<div class="nav">
+			<div class="logo">
+				<div class="logo-items"><a href="#">
+						Logo
+					</a></div>
+			</div>
+			<div class="nav-items">
+				<a href="#">
+					<div class="nav-item1">INTRODUCE</div>
+				</a>
+				<a href="#">
+					<div class="nav-item2">MENU</div>
+				</a>
+				<a href="#">
+					<div class="nav-item3">RESERVATION</div>
+				</a>
+				<a href="#">
+					<div class="nav-item4">NOTIFY</div>
+				</a>
+				<a href="#">
+					<div class="nav-item5">MY PAGE</div>
+				</a>
+				<div class="member-items">
+					<button class="member-item">Log In</button>
           <button class="member-item">Sign up</button>     
         </div>
       </div>
@@ -42,41 +53,40 @@
     <div class="nav1">
       <div class="nav1-items">
         <a href="https://bonypurplevisitors.jeonginlee.repl.co/"><div class="nav1-item1">고객리뷰</div></a>
-        <a href="https://hugijagseong.jeonginlee.repl.co"><div class="nav1-item2">리뷰작성</div></a>
+        <a href="#"><div class="nav1-item2">리뷰작성</div></a>
       </div>
-      </div>
-    </div>  
+      </div> 
     <div class="main">
       <div class="RV"">
           <div class="RV-item">
             <div class="RV-item-box">
               <div class="RV-item-DAY">
-                방문일자 : <text></text>
+                방문일자 : <INPUT TYPE ="DATE"> 
               </div>
               <div class="RV-item-MENU">
-                주문메뉴 : <text></text>
+                주문메뉴 : 
+                  <SELECT style="width:143px;height:25px;">
+                  <OPTION value="불고기 정식" selected="selected">불고기 정식</OPTION>
+                  <OPTION value="파스타 정식">파스타 정식</OPTION>
+                  <OPTION value="점심 특선 메뉴">점심 특선 메뉴</OPTION>
+                  <OPTION value="초밥 정식">초밥 정식</OPTION>
+                  <OPTION value="스테이크 정식">스테이크 정식</OPTION>
+                  <OPTION value="메뉴 1">메뉴 1</OPTION>
+                  <OPTION value="메뉴 2">메뉴 2</OPTION>
+                  </select>
               </div>
-             <div class="RV-item-STAR">
-                별점 :
-                <script>
-                  function rating(rat){
-                    for(let i=0; i<rat; i++){
-                      //꽉찬별
-                      document.write( '<i class="fas fa-star"></i>');                     
-                    }
-                    for(let i=0; i<5-rat; i++){
-                      //빈 별
-                      document.write( '<i class="far fa-star"></i>')
-                    }
-                  }
-                  rating(rat)
-                  </script>
-              </div> 
+              <div class= "RV-item-st">
+                <input type="radio" name=star value="1">★
+                <input type="radio" name=star value="2">★★
+                <input type="radio" name=star value="3">★★★
+                <input type="radio" name=star value="4">★★★★
+                <input type="radio" name=star value="5">★★★★★
+                </div>
               <div class= "RV-item-WR"> 
-                <text></text>
+                 <textarea name=content id=content rows=20 cols=70 style="text-align:left;" border=gray  > </textarea>
               </div>
               <div class= "RV-item-WR-bt"> 
-              <input type ="button" value="삭제"> 
+              <input type ="submit" name="wrbt" value="작성완료" > 
               </div>     
           </div>  
           </div>
